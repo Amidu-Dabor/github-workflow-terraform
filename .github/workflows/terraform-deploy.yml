@@ -10,6 +10,9 @@ jobs:
   terraform-deploy:
     runs-on: ubuntu-latest
     steps:
+    - name: Clone Source Code in Github Repo
+      uses: actions/checkout@v4
+
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
