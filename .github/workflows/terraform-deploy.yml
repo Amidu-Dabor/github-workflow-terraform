@@ -4,7 +4,7 @@ on:
   
 permissions:
   id-token: write # This is required for requesting the JWT
-  contents: read  # This is required for actions/checkout
+  contents: write  # This is required for writing back to repo
 
 jobs:
   terraform-deploy:
@@ -30,3 +30,9 @@ jobs:
     - name: Run Terraform Apply Command
       shell: pwsh
       run: terraform apply -auto-approve
+
+    - name: Commit Terraform State File
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: Updating Terraform State File
+        file_pattern: terraform.tfstate
