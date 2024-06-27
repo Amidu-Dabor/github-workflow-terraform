@@ -9,9 +9,9 @@ permissions:
 jobs:
   terraform-deploy:
     runs-on: ubuntu-latest
-      steps:
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: arn:aws:iam::295793222430:role/github-actions-terraform2
-          aws-region: us-east-1
+    steps:
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: arn:aws:iam::295793222430:role/github-actions-terraform2
+        aws-region: us-east-1
