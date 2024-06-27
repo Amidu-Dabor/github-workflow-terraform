@@ -15,3 +15,11 @@ jobs:
       with:
         role-to-assume: arn:aws:iam::295793222430:role/github-actions-terraform2
         aws-region: us-east-1
+
+    - name: Run Terraform Init Command
+      shell: pwsh
+      run: terraform init
+
+    - name: Run Terraform Plan Command
+      shell: pwsh
+      run: terraform plan
