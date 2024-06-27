@@ -26,3 +26,7 @@ jobs:
     - name: Run Terraform Plan Command
       shell: pwsh
       run: terraform plan
+
+    - name: Run Terraform Apply Command
+      shell: pwsh
+      run: terraform apply -auto-approve
